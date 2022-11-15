@@ -75,11 +75,10 @@ const Chat = ({
 
   // Dialog states
   const [isFormulaDialogOpen, setFormulaDialogOpen] = useState(false);
-  const [latex, setLatex] = useState('');
+  const [latex, setLatex] = useState('f(x)=\\log _10 x');
 
   const handleOpenDialog = () => setFormulaDialogOpen(true);
   const handleCloseDialog = () => setFormulaDialogOpen(false);
-  const handleChangeValue = (formula: string) => setLatex(formula);
   // end Dialog states
 
   const FormulaDialog = (
@@ -87,7 +86,7 @@ const Chat = ({
       <DialogTitle>Add mathmatical formula</DialogTitle>
 
       <DialogContent>
-        <MathfieldComponent latex={latex} onChange={handleChangeValue} />
+        <MathfieldComponent latex={latex} onChange={setLatex} />
         <TextField />
       </DialogContent>
 
