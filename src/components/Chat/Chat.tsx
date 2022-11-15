@@ -21,6 +21,7 @@ import {
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
 import { string } from 'prop-types';
+import FormulaDialog from '../formula-dialog';
 
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
@@ -65,6 +66,15 @@ const Chat = ({
   const chatContainerRef = useRef(null);
 
   const [input, setInputValue] = useState('');
+
+  // Dialog states
+  const [isFormulaDialogOpen, setFormulaDialogOpen] = useState(false);
+  const [formula, setFormula] = useState('');
+
+  const handleOpenDialog = () => setFormulaDialogOpen(true);
+  const handleCloseDialog = () => setFormulaDialogOpen(false);
+  const handleChangeValue = (formula: string) => setFormula(formula);
+  // end Dialog states
 
   const scrollIntoView = () => {
     setTimeout(() => {
@@ -308,12 +318,18 @@ const Chat = ({
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
           >
-            {/* <input
+            <FormulaDialog
+              isOpen={isFormulaDialogOpen}
+              handleOpen={handleOpenDialog}
+              handleClose={handleCloseDialog}
+              handleChange={handleChangeValue}
+            />
+            <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
-            /> */}
+            />
             <button>Insert Function</button>
             <button
               className="react-chatbot-kit-chat-btn-send"
