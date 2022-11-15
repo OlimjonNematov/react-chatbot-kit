@@ -22,6 +22,7 @@ import {
 import { IMessage } from '../../interfaces/IMessages';
 import { string } from 'prop-types';
 import FormulaDialog from '../formula-dialog';
+import { Button } from '@mui/material';
 
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
@@ -330,7 +331,9 @@ const Chat = ({
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
             />
-            <button>Insert Function</button>
+
+            <Button onClick={handleOpenDialog}>Insert Function</Button>
+
             <button
               className="react-chatbot-kit-chat-btn-send"
               style={customButtonStyle}
