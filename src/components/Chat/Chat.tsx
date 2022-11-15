@@ -81,22 +81,20 @@ const Chat = ({
   const handleChangeValue = (formula: string) => setFormula(formula);
   // end Dialog states
 
-  const FormulaDialog = () => {
-    return (
-      <Dialog open={isFormulaDialogOpen}>
-        <DialogTitle>Add mathmatical formula</DialogTitle>
+  const FormulaDialog = (
+    <Dialog open={isFormulaDialogOpen}>
+      <DialogTitle>Add mathmatical formula</DialogTitle>
 
-        <DialogContent>
-          <TextField />
-        </DialogContent>
+      <DialogContent>
+        <TextField />
+      </DialogContent>
 
-        <DialogActions>
-          <Button>Cancel</Button>
-          <Button onClick={handleCloseDialog}>Add</Button>
-        </DialogActions>
-      </Dialog>
-    );
-  };
+      <DialogActions>
+        <Button onClick={handleCloseDialog}>Cancel</Button>
+        <Button onClick={handleCloseDialog}>Add</Button>
+      </DialogActions>
+    </Dialog>
+  );
 
   const scrollIntoView = () => {
     setTimeout(() => {
