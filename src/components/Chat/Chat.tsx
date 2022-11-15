@@ -308,12 +308,13 @@ const Chat = ({
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
           >
-            <input
+            {/* <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
-            />
+            /> */}
+            <button>Insert Function</button>
             <button
               className="react-chatbot-kit-chat-btn-send"
               style={customButtonStyle}
