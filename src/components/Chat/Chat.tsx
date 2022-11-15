@@ -28,6 +28,7 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
+import { MathfieldComponent } from 'react-mathlive';
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
   widgetRegistry: any;
@@ -74,11 +75,11 @@ const Chat = ({
 
   // Dialog states
   const [isFormulaDialogOpen, setFormulaDialogOpen] = useState(false);
-  const [formula, setFormula] = useState('');
+  const [latex, setLatex] = useState('');
 
   const handleOpenDialog = () => setFormulaDialogOpen(true);
   const handleCloseDialog = () => setFormulaDialogOpen(false);
-  const handleChangeValue = (formula: string) => setFormula(formula);
+  const handleChangeValue = (formula: string) => setLatex(formula);
   // end Dialog states
 
   const FormulaDialog = (
@@ -86,6 +87,7 @@ const Chat = ({
       <DialogTitle>Add mathmatical formula</DialogTitle>
 
       <DialogContent>
+        <MathfieldComponent latex={latex} onChange={handleChangeValue} />
         <TextField />
       </DialogContent>
 
