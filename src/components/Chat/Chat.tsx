@@ -20,10 +20,14 @@ import {
   ICustomStyles,
 } from '../../interfaces/IConfig';
 import { IMessage } from '../../interfaces/IMessages';
-import { string } from 'prop-types';
-import FormulaDialog from '../formula-dialog';
 import { Button } from '@mui/material';
-
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from '@mui/material';
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
   widgetRegistry: any;
@@ -76,6 +80,23 @@ const Chat = ({
   const handleCloseDialog = () => setFormulaDialogOpen(false);
   const handleChangeValue = (formula: string) => setFormula(formula);
   // end Dialog states
+
+  const FormulaDialog = () => {
+    return (
+      <Dialog open={isFormulaDialogOpen}>
+        <DialogTitle>Add mathmatical formula</DialogTitle>
+
+        <DialogContent>
+          <TextField />
+        </DialogContent>
+
+        <DialogActions>
+          <Button>Cancel</Button>
+          <Button onClick={handleCloseDialog}>Add</Button>
+        </DialogActions>
+      </Dialog>
+    );
+  };
 
   const scrollIntoView = () => {
     setTimeout(() => {
@@ -319,12 +340,7 @@ const Chat = ({
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
           >
-            <FormulaDialog
-              isOpen={isFormulaDialogOpen}
-              handleOpen={handleOpenDialog}
-              handleClose={handleCloseDialog}
-              handleChange={handleChangeValue}
-            />
+            {FormulaDialog}
             <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
