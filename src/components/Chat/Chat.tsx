@@ -84,6 +84,7 @@ const Chat = ({
 
   const preview = (
     <div style={{ display: 'flex', justifyContent: 'center', padding: 24 }}>
+      <text>Preview:</text>
       <Latex displayMode="true">{input}</Latex>
     </div>
   );
@@ -288,7 +289,8 @@ const Chat = ({
     header = headerText;
   }
 
-  let placeholder = 'Write your message here';
+  let placeholder =
+    'Write your message here, wrap math with $()$ e.g. $(math here)$';
   if (placeholderText) {
     placeholder = placeholderText;
   }
@@ -326,11 +328,11 @@ const Chat = ({
         </div>
 
         <div className="react-chatbot-kit-chat-input-container">
+          {preview}
           <form
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
           >
-            {preview}
             <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
