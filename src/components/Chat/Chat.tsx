@@ -28,7 +28,7 @@ import {
   DialogTitle,
   TextField,
 } from '@mui/material';
-import { MathfieldComponent } from 'react-mathlive';
+
 interface IChatProps {
   setState: React.Dispatch<SetStateAction<any>>;
   widgetRegistry: any;
@@ -48,6 +48,7 @@ interface IChatProps {
   parse?: (message: string) => void;
   actions?: object;
 }
+var Latex = require('react-latex');
 
 const Chat = ({
   state,
@@ -81,20 +82,10 @@ const Chat = ({
   const handleCloseDialog = () => setFormulaDialogOpen(false);
   // end Dialog states
 
-  const FormulaDialog = (
-    <Dialog open={isFormulaDialogOpen}>
-      <DialogTitle>Add mathmatical formula</DialogTitle>
-
-      <DialogContent>
-        <MathfieldComponent latex={latex} onChange={setLatex} />
-        <TextField />
-      </DialogContent>
-
-      <DialogActions>
-        <Button onClick={handleCloseDialog}>Cancel</Button>
-        <Button onClick={handleCloseDialog}>Add</Button>
-      </DialogActions>
-    </Dialog>
+  const preview = (
+    <div style={{ display: 'flex', justifyContent: 'center', padding: 24 }}>
+      <Latex displayMode="true">{input}</Latex>
+    </div>
   );
 
   const scrollIntoView = () => {
@@ -339,15 +330,13 @@ const Chat = ({
             className="react-chatbot-kit-chat-input-form"
             onSubmit={handleSubmit}
           >
-            {FormulaDialog}
+            {preview}
             <input
               className="react-chatbot-kit-chat-input"
               placeholder={placeholder}
               value={input}
               onChange={(e) => setInputValue(e.target.value)}
             />
-
-            <Button onClick={handleOpenDialog}>Insert Function</Button>
 
             <button
               className="react-chatbot-kit-chat-btn-send"

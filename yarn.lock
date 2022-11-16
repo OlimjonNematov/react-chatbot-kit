@@ -895,6 +895,11 @@
   "resolved" "https://registry.npmjs.org/colorette/-/colorette-1.2.2.tgz"
   "version" "1.2.2"
 
+"commander@^2.19.0":
+  "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
+  "resolved" "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
+  "version" "2.20.3"
+
 "commander@^2.20.0":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
   "resolved" "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
@@ -1481,6 +1486,20 @@
   dependencies:
     "minimist" "^1.2.5"
 
+"katex@^0.10.2":
+  "integrity" "sha512-cQOmyIRoMloCoSIOZ1+gEwsksdJZ1EW4SWm3QzxSza/QsnZr6D4U1V9S4q+B/OLm2OQ8TCBecQ8MaIfnScI7cw=="
+  "resolved" "https://registry.npmjs.org/katex/-/katex-0.10.2.tgz"
+  "version" "0.10.2"
+  dependencies:
+    "commander" "^2.19.0"
+
+"katex@0.12.0":
+  "integrity" "sha512-y+8btoc/CK70XqcHqjxiGWBOeIL8upbS0peTPXTvgrh21n1RiWWcIpSWM+4uXq+IAgNh9YYQWdc7LVDPDAEEAg=="
+  "resolved" "https://registry.npmjs.org/katex/-/katex-0.12.0.tgz"
+  "version" "0.12.0"
+  dependencies:
+    "commander" "^2.19.0"
+
 "kind-of@^6.0.2":
   "integrity" "sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw=="
   "resolved" "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz"
@@ -1544,11 +1563,6 @@
   "version" "6.0.0"
   dependencies:
     "yallist" "^4.0.0"
-
-"mathlive@>= 0.55.0 < 1":
-  "integrity" "sha512-XRVE3fWTEytNkcNNzUgIfiL0eyLXsif4nVpLHa+PGXICq6PK949IkMh7ZCR4LmzT1dtTA4mL6S4gcbeVvlohow=="
-  "resolved" "https://registry.npmjs.org/mathlive/-/mathlive-0.84.0.tgz"
-  "version" "0.84.0"
 
 "mdn-data@2.0.14":
   "integrity" "sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow=="
@@ -1864,7 +1878,15 @@
   "resolved" "https://registry.npmjs.org/react-conditionally-render/-/react-conditionally-render-1.0.2.tgz"
   "version" "1.0.2"
 
-"react-dom@^16.7.0":
+"react-dom@^17.0.0 || ^18.0.0", "react-dom@>=16.6.0":
+  "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
+  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
+  "version" "18.2.0"
+  dependencies:
+    "loose-envify" "^1.1.0"
+    "scheduler" "^0.23.0"
+
+"react-dom@16.14.0":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -1873,14 +1895,6 @@
     "object-assign" "^4.1.1"
     "prop-types" "^15.6.2"
     "scheduler" "^0.19.1"
-
-"react-dom@^17.0.0 || ^18.0.0", "react-dom@>=16.6.0":
-  "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
-  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
-  "version" "18.2.0"
-  dependencies:
-    "loose-envify" "^1.1.0"
-    "scheduler" "^0.23.0"
 
 "react-is@^16.13.1":
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
@@ -1897,14 +1911,12 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
-"react-mathlive@^3.0.5-preview.1":
-  "integrity" "sha512-NkFat1clT1zuAcXd+jgsNtTcNHk1450JhhY645taEJ1yIgCrbKvqIvGxnJGXxQu7mkq3jf1iqfwDj9Gb0q7m3Q=="
-  "resolved" "https://registry.npmjs.org/react-mathlive/-/react-mathlive-3.0.5-preview.1.tgz"
-  "version" "3.0.5-preview.1"
+"react-latex@^2.0.0":
+  "integrity" "sha512-x17uDCfqBgR+5ZF/zplRCuHdEbX22CJlVipOqMUinRMoiOwh5fr3jbjD4zqVQ8pIs4AnF0BWPDR2S7Fyd8Snxw=="
+  "resolved" "https://registry.npmjs.org/react-latex/-/react-latex-2.0.0.tgz"
+  "version" "2.0.0"
   dependencies:
-    "mathlive" ">= 0.55.0 < 1"
-    "react" "^16.7.0"
-    "react-dom" "^16.7.0"
+    "katex" "^0.10.2"
 
 "react-svg-core@^3.0.3":
   "integrity" "sha512-Ws3eM3xCAwcaYeqm4Ajcz3zxBYNI6BeTWWhFR0cpOT+pWuVtozgHYK9xUM0S/ilapZgYMQDe49XgOxpvooFq4w=="
@@ -1927,6 +1939,15 @@
     "loader-utils" "^1.2.3"
     "react-svg-core" "^3.0.3"
 
+"react-tex@^1.5.0":
+  "integrity" "sha512-wt9CzCE7bjdNAAftVquY5uWWd8FUgJozRydT9fPte8yc7TG5lkwBJTaJesrWhKfm22WfMYZHCK78NFZcWQ6m0Q=="
+  "resolved" "https://registry.npmjs.org/react-tex/-/react-tex-1.5.0.tgz"
+  "version" "1.5.0"
+  dependencies:
+    "katex" "0.12.0"
+    "react" "16.14.0"
+    "react-dom" "16.14.0"
+
 "react-transition-group@^4.4.5":
   "integrity" "sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -1937,7 +1958,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^16.14.0", "react@^16.7.0":
+"react@^16.14.0", "react@16.14.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
