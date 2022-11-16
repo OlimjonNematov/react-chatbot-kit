@@ -290,7 +290,7 @@ const Chat = ({
   }
 
   let placeholder =
-    'Write your message here, wrap math with $()$ e.g. $(math here)$';
+    'Write your message here, wrap math with $()$ \n e.g. $(math here)$';
   if (placeholderText) {
     placeholder = placeholderText;
   }
