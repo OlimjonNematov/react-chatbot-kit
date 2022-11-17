@@ -83,7 +83,7 @@ const Chat = ({
   // end Dialog states
 
   const preview = (
-    <div style={{ display: 'flex', justifyContent: 'center', padding: 24 }}>
+    <div style={{ display: 'flex', padding: 24 }}>
       <text>Preview:</text>
       <Latex displayMode="true">{input}</Latex>
     </div>

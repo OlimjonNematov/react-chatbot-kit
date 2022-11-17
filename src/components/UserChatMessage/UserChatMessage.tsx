@@ -8,6 +8,7 @@ import UserIcon from '../../assets/icons/user-alt.svg';
 import './UserChatMessage.css';
 import { ICustomComponents } from '../../interfaces/IConfig';
 
+var Latex = require('react-latex');
 interface IUserChatMessageProps {
   message: string;
   customComponents: ICustomComponents;
@@ -26,7 +27,7 @@ const UserChatMessage = ({
         })}
         elseShow={
           <div className="react-chatbot-kit-user-chat-message">
-            {message}
+            <Latex>{message}</Latex>
             <div className="react-chatbot-kit-user-chat-message-arrow"></div>
           </div>
         }
