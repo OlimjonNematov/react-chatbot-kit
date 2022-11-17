@@ -93,7 +93,9 @@ const Chat = ({
       }}
     >
       <text>Preview:</text>
-      <Latex displayMode="true">{input}</Latex>
+      <h6>
+        <Latex displayMode="true">{input}</Latex>
+      </h6>
     </div>
   );
 
