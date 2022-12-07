@@ -92,9 +92,9 @@ const Chat = ({
         padding: 24,
       }}
     >
-      <text>Preview:</text>
+      <p>Preview:</p>
       <h6>
-        <Latex displayMode="true">{input}</Latex>
+        <Latex displayMode={true}>{input}</Latex>
       </h6>
     </div>
   );
